@@ -1,9 +1,10 @@
 #include <stdio.h>
-
+#include <unistd.h>
 /**
- * main - Entry point
+ * main - main function in the task
  *
- * Return: Always 0 (Success)
+ *
+ * Return: return 1
  */
 int main(void)
 {
