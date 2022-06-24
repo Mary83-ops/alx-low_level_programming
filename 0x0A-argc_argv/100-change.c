@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include <stdlib.h>
 
 /**
@@ -6,47 +6,34 @@
  * for an amount of money
  * @argc: number of arguments
  * @argv: array of arguments
- * Return: returns 1 if there is an error; else returns 0
+ * Return: 0 for success
  */
 
 int main(int argc, char *argv[])
 {
-int cents, coins = 0;
+	int num, j, result = 0;
+	int coins[] = {25, 10, 5, 2, 1};
 
-if (argc != 2)
-{
-	printf("Error\n");
-	return (1);
-}
+	if (argc != 2)
+	{
+		printf("%\n", "Error");
+		return (1);
+	}
 
-cents = atoi(argv[1]);
-
-while (cents > 0)
-{
-	coins++;
-	if ((cents - 25) >= 0)
+	num = atoi(argv[1]);
+	if (num < 0)
 	{
-		cents -= 25;
-		continue;
+		printf("0\n");
+		return (0);
 	}
-	if ((cents - 10) >= 0)
+	for (j = 0; j < 5 && num >= 0; j++)
 	{
-		cents -= 10;
-		continue;
+		while (num >= coins[j])
+		{
+			num -= coins[j];
+			result++;
+		}
 	}
-	if ((cents - 5) >= 0)
-	{
-		cents -= 5;
-		coninue;
-	}
-	if ((cents - 2) >= 0)
-	{
-		cents -= 2;
-		continue;
-	}
-	cents--;
-}
-printf("%d\n", coins);
-
-return (0);
+	printf("%d\n", result);
+	return (0);
 }
