@@ -18,7 +18,9 @@ if (argc != 2)
 	printf("Error\n");
 	return (1);
 }
+
 cents = atoi(argv[1]);
+
 while (cents > 0)
 {
 	coins++;
@@ -45,5 +47,6 @@ while (cents > 0)
 	cents--;
 }
 printf("%d\n", coins);
+
 return (0);
 }
