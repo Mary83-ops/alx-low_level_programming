@@ -1,1 +1,1 @@
-functions nested loops
+0x0F. C - Function pointers
